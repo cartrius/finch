@@ -31,7 +31,7 @@ jobs:
           EOF
           
           # Upload to S3
-          aws s3 cp latest.json s3://my-finch-test-bucket/latest.json --content-type "application/json" --acl public-read
+          aws s3 cp latest.json s3://my-finch-test-bucket/latest.json --content-type "application/json"
           
           echo "Latest version updated to ${{ github.event.inputs.version }}"
           echo "View at https://my-finch-test-bucket.s3.amazonaws.com/latest.json"
