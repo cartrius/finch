@@ -24,7 +24,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ secrets.REGION }}
-          role-to-assume: ${{ secrets.ROLE }}
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT }}:role/${{ secrets.AWS_ROLE }}
           role-session-name: update-lastest-os-artifacts-in-s3
           
       - name: Update latest artifact information in S3
